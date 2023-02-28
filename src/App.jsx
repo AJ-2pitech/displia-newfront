@@ -28,27 +28,27 @@ function App() {
 
   return (
     <div className="App">
-      <Elements stripe={stripePromise}>
-        <Router>
-          <Header />
-          {
-            loading ? <Typography variant="h1"></Typography> : (
-              <>
-                <Routes>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/login" element={<Login />} />
-                  <Route path="/register" element={<Register />} />
-                  <Route path="/*" element={<ProtectedRoute />}>
-                    <Route path="dashboard" element={<Dashboard />} />
-                    <Route path="dashboard/customer/:id" element={<CustomerDetails />} />
-                  </Route>
-                </Routes>
-              </>
-            )
-          }
+      {/* <Elements stripe={stripePromise}> */}
+      <Router>
+        <Header />
+        {
+          loading ? <Typography variant="h1"></Typography> : (
+            <>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
+                <Route path="/*" element={<ProtectedRoute />}>
+                  <Route path="dashboard" element={<Dashboard />} />
+                  <Route path="dashboard/customer/:id" element={<CustomerDetails />} />
+                </Route>
+              </Routes>
+            </>
+          )
+        }
 
-        </Router>
-      </Elements>
+      </Router>
+      {/* </Elements> */}
     </div>
   )
 }

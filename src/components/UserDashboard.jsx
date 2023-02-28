@@ -13,8 +13,8 @@ import { LoadingButton } from "@mui/lab"
 import SaveIcon from "@mui/icons-material/Save"
 const UserDashboard = () => {
 
-    const elements = useElements();
-    const stripe = useStripe();
+    // const elements = useElements();
+    // const stripe = useStripe();
     const dispatch = useDispatch();
 
     const [responseMessage, setResponseMessage] = useState("");
@@ -82,7 +82,7 @@ const UserDashboard = () => {
         <>
 
 
-            <Container sx={{ display: "flex", justifyContent: "center" }}>
+            {/* <Container sx={{ display: "flex", justifyContent: "center" }}>
                 <Box sx={{ minWidth: 375, maxWidth: 600 }}>
                     <Typography variant='h6' textAlign="center" p={4}>{!responseMessage ? "Upgrade Your Plan" : <span style={{ color: "green", fontWeight: 700 }}>{responseSuccess && responseMessage}</span>}</Typography>
 
@@ -261,7 +261,7 @@ const UserDashboard = () => {
                         ) : null
                     }
                 </Box>
-            </Container>
+            </Container> */}
         </>
     )
 }
