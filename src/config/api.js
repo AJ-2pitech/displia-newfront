@@ -4,7 +4,7 @@ const API_URL = 'http://localhost:8000/api/v1/';
 const PRODUCTION_API = "https://displaylab-back-final-production.up.railway.app/api/v1/"
 
 const axiosInstance = axios.create({
-    baseURL: API_URL,
+    baseURL: PRODUCTION_API,
     withCredentials: true
 });
 
