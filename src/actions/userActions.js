@@ -58,7 +58,7 @@ export const loadUser = () => async dispatch => {
     try {
         dispatch({ type: LOAD_USER_REQUEST });
 
-        const { data } = await axiosInstance.get(`/me`);
+        const { data } = await axiosInstance.get(`/me?token=${document.cookie.split("=")[1]}`);
 
         dispatch({ type: LOAD_USER_SUCCESS, payload: data.user })
 
@@ -77,7 +77,7 @@ export const logout = () => async dispatch => {
 
         dispatch({ type: LOGOUT_SUCCESS })
 
-        document.cookie = ``;
+        document.cookie = `token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; `;
 
     } catch (error) {
         dispatch({ type: LOGOUT_FAIL, payload: error.message })
@@ -90,7 +90,7 @@ export const getAllUsers = () => async dispatch => {
             type: ALL_USERS_REQUEST
         });
 
-        const { data } = await axiosInstance.get("/admin/users");
+        const { data } = await axiosInstance.get(`/admin/users?token=${document.cookie.split("=")[1]}`);
 
         dispatch({
             type: ALL_USERS_SUCCESS,
@@ -110,7 +110,7 @@ export const getCustomerDetails = (id) => async dispatch => {
             type: CUSTOMER_DETAILS_REQUEST
         });
 
-        const { data } = await axiosInstance.get(`/admin/user/${id}`);
+        const { data } = await axiosInstance.get(`/admin/user/${id}?token=${document.cookie.split("=")[1]}`);
 
         dispatch({ type: CUSTOMER_DETAILS_SUCCESS, payload: data.user });
 
