@@ -19,7 +19,7 @@ export const login = (email, password) => async dispatch => {
 
         await dispatch({ type: LOGIN_SUCCESS, payload: data.user })
 
-        document.cookie = `token=${data.token}`;
+        document.cookie = `jwttoken=${data.jwttoken}`;
         // window.location.reload()
     } catch (error) {
         dispatch({ type: LOGIN_FAIL, payload: error.message })
@@ -41,7 +41,7 @@ export const register = userData => async dispatch => {
 
         await dispatch({ type: REGISTER_USER_SUCCESS, payload: data.user })
 
-        document.cookie = `token=${data.token}`;
+        document.cookie = `jwttoken=${data.jwttoken}`;
 
 
 
@@ -77,7 +77,7 @@ export const logout = () => async dispatch => {
 
         dispatch({ type: LOGOUT_SUCCESS })
 
-        document.cookie = `token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; `;
+        document.cookie = `jwttoken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; `;
 
     } catch (error) {
         dispatch({ type: LOGOUT_FAIL, payload: error.message })
