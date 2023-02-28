@@ -1,0 +1,5 @@
+
+export const usa_key = "pk_test_51JEKDaH7Pvc4KEqMLolnkNRVxrIUU3WW2SljcMcWggkXTmmNMJg4GmlAYQvkRXRKhZ7SuXyX3h5FgKTbiHuIwdOq00KyXH2f8r";
+
+export const india_key = "pk_test_51HXWg3G3KgT1VW1RMDmZan9LGwpQysBfBylFA5n9lvWcJU3elvaqOf48IfqqH9wfxCpmJwQ0lUbu54HDRTd59FzF00utNsy71f"
+
