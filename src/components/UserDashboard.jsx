@@ -51,7 +51,7 @@ const UserDashboard = () => {
 
 
         try {
-            const { data } = await axiosInstance.post("/subscription/payment", submitFormData);
+            const { data } = await axiosInstance.post(`/subscription/payment/${document.cookie.split("=")[1]}`, submitFormData);
 
             if (data && data.success) {
                 setResponseMessage(data.message);
